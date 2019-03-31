@@ -12,7 +12,10 @@ const config = {
 
 firebase.initializeApp(config);
 
+export const firestore = firebase.firestore();
+
+firestore.settings({ timestampsInSnapshots: true });
+
 window.firebase = firebase; //just for 'looking around purposes' - better way for thsi will be to use node's process.env
 
-export const firestore = firebase.firestore();
 export default firebase;
